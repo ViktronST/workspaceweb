@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Formulario en HTML5</title>
+
+        <script>
+            function actualizarNombreCompleto() {
+                let nombre = document.getElementById("nombre").value;
+                let apellidos = document.getElementById("apellidos").value;
+                document.getElementById("nombreCompleto").textContent = nombre + " " + apellidos;
+            }
+    
+            function actualizarSalario() {
+                document.getElementById("lsalario").textContent = document.getElementById("salario").value;
+            }
+        </script>
+
+        <style>
+            body, input{
+                background-color: bisque;
+            }
+            body legend:first-of-type{
+                background-color: brown;
+            }
+            fieldset input:first-of-type{
+                background-color: yellow;
+            }
+            .bgCoral{
+                background-color: darkgray; 
+            }
+            #dni{
+                background-color:darksalmon;
+            }
+            header{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 20px;
+                text-align: center;
+                background-color: darkslategray;
+                color: white;
+                font-family: 'Times New Roman', Times, serif;
+                padding: 5px;
+                z-index: 1000;
+            }
+            main {
+                padding-top: 30px;
+            }
+            label[for="perfil"] {
+                display: block;
+                margin-bottom: 5px;
+            }
+            label[for="comentario"] {
+                display: block;
+                margin-bottom: 5px;
+            }
+            label[for="favColor"] {
+                font-size: 50px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            MI CABECERA
+        </header>
+
+        <main>
+            <section>
+                <form id="myForm" action="#" method="get" autocomplete="on" class="bgCoral" novalidate>
+                    <input type="hidden" name="id" value="1">
+
+                    <fieldset>
+                        <legend>Datos Usuario</legend><br>
+        
+                        <label style="margin-left: 40px;" for="codEmpleado">Código Empleado:</label>
+                        <input type="text" id="codEmpleado" name="codEmpleado" value="COD-001" disabled><br><br>
+        
+                        <label style="margin-left: 40px;" for="usuario">Usuario:</label>
+                        <input type="text" id="usuario" name="usuario" required autofocus><br><br>
+        
+                        <label style="margin-left: 40px;" for="contraseña">Contraseña:</label>
+                        <input type="password" id="contraseña" name="contraseña" required></input>
+                    </fieldset><br>
+        
+                    <fieldset>
+                        <legend>Datos Empleados</legend><br>
+        
+                        <label style="margin-left: 40px;" for="nombreCompleto">Nombre Completo:</label>
+                        <output id="nombreCompleto"></output><br><br>
+        
+                        <label style="margin-left: 40px; color:darkgreen" for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" oninput="actualizarNombreCompleto()" required><br><br>
+        
+                        <label style="margin-left: 40px; color:darkgreen" for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos" oninput="actualizarNombreCompleto()" required><br><br>
+        
+                        <label style="margin-left: 40px;" for="f_nacimiento">Fecha Nacimiento</label>
+                        <input type="date" id="f_nacimiento" name="f_nacimiento" required></input><br><br>
+        
+                        <label style="margin-left: 40px;" for="dni">DNI:</label>
+                        <input type="text" id="dni" name="dni" pattern="[0-9]{8}[A-Z]"
+                        title="Debe tener 8 números seguidos de una letra mayúscula."></input><br><br>
+        
+                        <label style="margin-left: 40px;" for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" placeholder="Ej: 123456789"></input><br><br>
+        
+                        <label style="margin-left: 40px;" for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br><br>
+        
+                        <label style="margin-left: 40px;" for="homepage">Añadir Página:</label>
+                        <input type="url" id="homepage" name="homepage"><br><br>
+        
+                        <label style="margin-left: 40px;" for="tipoEmpleado">Tipo Empleado:</label>
+                        <input list="tipoEmpleado" id="tipoEmpleado" name="tipoEmpleado" required><br><br>
+                        <datalist id="tipoEmpleado">
+                            <option value="Interno">
+                            <option value="Externo">
+                        </datalist>
+        
+                        <label style="margin-left: 40px;">Carnet:</label><br>
+        
+                        <input style="margin-left: 40px;" type="radio" id="sinCarnet" name="sinCarnet" value="0">
+                        <label for="sinCarnet">Sin Carnet&nbsp;&nbsp;&nbsp;</label>
+        
+                        <input style="margin-left: 40px;" type="radio" id="B2" name="B2" value="1">
+                        <label for="B2">B2&nbsp;&nbsp;&nbsp;</label>
+        
+                        <input style="margin-left: 40px;" type="radio" id="otros" name="otros" value="2">
+                        <label for="otros">Otros&nbsp;&nbsp;&nbsp;</label>
+                    </fieldset><br>
+        
+                    <fieldset>
+                        <legend>Datos Contratación</legend><br>
+        
+                        <label style="margin-left: 40px;" for="puesto">Puesto:</label>
+                        <select id="puesto" name="puesto" required>
+                            <option value="1">Programador</option>
+                            <option value="2">Recursos Humanos</option>
+                            <option value="3">Ingeniero</option>
+                            <option value="4">Diseñador Web</option>
+                        </select><br><br>
+        
+                        <label style="margin-left: 40px;" for="perfil">Perfil:</label>
+                        <select style="margin-left: 40px;" id="perfil" name="perfil" multiple required>
+                            <option value="1">Administrador BBDD</option>
+                            <option value="2">Desarrollador Front-End</option>
+                            <option value="3">Desarrollador Java</option>
+                            <option value="4">Desarrollador .NET</option>
+                        </select><br><br>  
+        
+                        <label style="margin-left: 40px;" for="mesContratacion">Mes Contratación:</label>
+                        <input type="month" id="mesContratacion" name="mesContratacion"><br><br>
+                        
+                        <label style="margin-left: 40px;" for="salario">Salario:</label>
+                        <input type="range" id="salario" name="salario" min="25000" max="60000" step="1000" value="25000" oninput="actualizarSalario()"> 
+                    </fieldset><br>
+        
+                    <fieldset>
+                        <legend>Configuración Aplicación</legend><br>
+        
+                        <label style="margin-left: 40px;" for="favColor">Selecciona el color de tu perfil:</label>
+                        <input type="color" id="favColor" name="favColor"><br><br>
+        
+                        <label style="margin-left: 40px;" for="busqueda">Búsqueda:</label>
+                        <input type="search" id="busqueda" name="busqueda">
+                    </fieldset><br>
+        
+                    <label style="margin-left: 10px;" for="comentario">Comentario:</label>
+                    <textarea style="margin-left: 40px;" id="comentario" name="comentario" rows="5" cols="50"></textarea><br><br>
+        
+                    <button style="margin-left: 1500px;" type="reset">Limpiar</button>
+                    <button type="submit">Enviar</button>
+        
+                </form>
+            </section>
+        </main>
+
+        <footer>
+
+        </footer>
+    </body>
+</html>
