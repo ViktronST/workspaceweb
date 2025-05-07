@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Cliente</title>
+
+    <script>
+        function actualizarNombreCompleto() {
+            let nombre = document.getElementById("nombre").value;
+            let apellidos = document.getElementById("apellidos").value;
+            document.getElementById("nombreCompleto").textContent = nombre + " " + apellidos;
+        }
+
+    </script>
+
+    <!--
+    <style>
+        button {    
+            margin-top: 600px;
+            margin-right: 350px;
+        }
+    </style>
+    -->
+
+    <link rel="stylesheet" href="../estilo/estilos_formulario.css">
+
+</head>
+<body>
+    <h1>Insertar Nuevo Cliente</h1>
+    <fieldset>
+        <legend>Datos del Cliente</legend>
+        <form action="InsertarCliente" method="post">
+            <label for="nombreCompleto">Nombre Completo:</label>
+            <output id="nombreCompleto"></output><br><br>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" oninput="actualizarNombreCompleto()" required><br><br>
+    
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" oninput="actualizarNombreCompleto()" required><br><br>
+    
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" maxlength="9" pattern="[0-9]{8}[A-Za-z]" 
+                   title="Debe tener 8 dígitos seguidos de una letra" placeholder="Ej: 12345678Z" required><br><br>
+    
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br><br>
+    
+            <!--
+            <input type="submit" value="Guardar Cliente">
+            -->
+
+            <a href="../tabla/EjerCliente/cliente2.html"><br>
+                <button>Guardar Cliente</button>
+            </a>
+        </form>
+    </fieldset>
+    
+</body>
+</html>

@@ -5,10 +5,12 @@
 <title>Ejemplo método GET en el atributo method</title>
 </head>
 <body>
+	<!-- El "action" llama al servirdor, como aun no tenemos el nuestro propio
+	 este llamará al de Google para hacer peticiones y enciar información.-->
 	<form action="http://www.google.com/search" 
-					target="_blank" method="get">
-		Google: <input type="search" name="q">
-		<input type="submit" value="Buscar">
+					target="_blank" method="get">	<!-- targe="_blank" nos abre una nueva pesteña.-->
+		Google: <input type="search" name="q">		<!-- La "q" es un parámetro que le pasamos a Google, es una 'question'.-->
+		<input type="submit" value="Buscar">		<!-- Sin el "submit" la info nunca llegará al servidor.-->
 	</form>
 </body>
 </html>
