@@ -1,13 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora Simple</title>
+  <link rel="stylesheet" href="../estilo/calculadora.css" />
 </head>
-
 <body>
-    
-</body>
+  <div class="container">
+    <h1>Calculadora</h1>
 
+    <input type="number" id="inputNumber" placeholder="Introduce un número" />
+
+    <input type="text" id="result" placeholder="Resultado" readonly />
+
+    <div class="operators">
+        <a href="#" onclick="setOperator('+')">+</a>
+        <a href="#" onclick="setOperator('-')">−</a>
+        <a href="#" onclick="setOperator('*')">×</a>
+        <a href="#" onclick="setOperator('/')">÷</a>
+      </div>
+
+    <button onclick="calculate()">Calcular</button>
+
+    <p id="operatorDisplay"></p>
+  </div>
+
+  <script>
+    let savedNumber = null;
+    let operator = null;
+
+    function setOperator(op) {
+      const input = document.getElementById('inputNumber');
+      if (input.value !== '') {
+        savedNumber = parseFloat(input.value);
+        operator = op;
+        document.getElementById('operatorDisplay').textContent = `Operador seleccionado: ${op}`;
+        input.value = ''; // Limpiamos el input para el segundo número
+      } else {
+        alert("Introduce un número antes de seleccionar un operador.");
+      }
+    }
+
+    function calculate() {
+      const input = document.getElementById('inputNumber');
+      const resultField = document.getElementById('result');
+      const currentNumber = parseFloat(input.value);
+
+      if (savedNumber === null || operator === null || isNaN(currentNumber)) {
+        alert("Faltan datos para hacer el cálculo.");
+        return;
+      }
+
+      let result;
+      switch (operator) {
+        case '+': result = savedNumber + currentNumber; break;
+        case '-': result = savedNumber - currentNumber; break;
+        case '*': result = savedNumber * currentNumber; break;
+        case '/': 
+          if (currentNumber === 0) {
+            alert("No se puede dividir por 0.");
+            return;
+          }
+          result = savedNumber / currentNumber;
+          break;
+      }
+
+      resultField.value = result;
+      savedNumber = null;
+      operator = null;
+      document.getElementById('operatorDisplay').textContent = '';
+      input.value = '';
+    }
+  </script>
+</body>
 </html>
