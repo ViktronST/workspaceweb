@@ -22,37 +22,39 @@
     </style>
     -->
 
-    <link rel="stylesheet" href="../estilo/estilos_formulario.css">
+    <link rel="stylesheet" href="../estilo/estilo_formulario_clientes.css">
 
 </head>
 <body>
     <h1>Insertar Nuevo Cliente</h1>
     <fieldset>
         <legend>Datos del Cliente</legend>
-        <form action="InsertarCliente" method="post">
+        <form action="../tabla/EjerCliente/cliente2.html" method="get"> <!-- "post" oculta la info que se envía, en cambio "get" no lo hace-->
             <label for="nombreCompleto">Nombre Completo:</label>
             <output id="nombreCompleto"></output><br><br>
 
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" oninput="actualizarNombreCompleto()" required><br><br>
+            <input type="text" id="nombre" name="nombre" oninput="actualizarNombreCompleto()" required autofocus value="Lucia"><br><br>
     
             <label for="apellidos">Apellidos:</label>
-            <input type="text" id="apellidos" name="apellidos" oninput="actualizarNombreCompleto()" required><br><br>
+            <input type="text" id="apellidos" name="apellidos" oninput="actualizarNombreCompleto()" required value="Serrano Calderrojo"><br><br>
     
             <label for="dni">DNI:</label>
             <input type="text" id="dni" name="dni" maxlength="9" pattern="[0-9]{8}[A-Za-z]" 
-                   title="Debe tener 8 dígitos seguidos de una letra" placeholder="Ej: 12345678Z" required><br><br>
+                   title="Debe tener 8 dígitos seguidos y una letra" placeholder="Ej: 12345678Z" required value="78954319T"><br><br>
     
             <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br><br>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required value="17/01/2004"><br><br>
     
             <!--
             <input type="submit" value="Guardar Cliente">
             -->
-
-            <a href="../tabla/EjerCliente/cliente2.html"><br>
-                <button>Guardar Cliente</button>
+            <!--
+            <a href="../tabla/EjerCliente/cliente2.html">
+                <button type="button">Guardar Cliente</button>
             </a>
+            -->
+            <button>Guardar Cliente</button>
         </form>
     </fieldset>
     
