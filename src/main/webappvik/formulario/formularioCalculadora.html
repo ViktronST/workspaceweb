@@ -16,8 +16,8 @@
 
     <div class="operators">
         <a href="#" onclick="setOperator('+')">+</a>
-        <a href="#" onclick="setOperator('-')">−</a>
-        <a href="#" onclick="setOperator('*')">×</a>
+        <a href="#" onclick="setOperator('-')">-</a>
+        <a href="#" onclick="setOperator('*')">x</a>
         <a href="#" onclick="setOperator('/')">÷</a>
       </div>
 
@@ -36,7 +36,7 @@
         savedNumber = parseFloat(input.value);
         operator = op;
         document.getElementById('operatorDisplay').textContent = `Operador seleccionado: ${op}`;
-        input.value = ''; // Limpiamos el input para el segundo número
+        input.value = ''; 
       } else {
         alert("Introduce un número antes de seleccionar un operador.");
       }
