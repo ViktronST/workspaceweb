@@ -62,7 +62,8 @@ public class CalculadoraServlet extends HttpServlet{
 				
 			String resultadoStr = String.valueOf(resultado);
 			 req.setAttribute("resultadoStr", resultadoStr);
-		     req.getRequestDispatcher("calculadoraServlet.jsp?resultadoStr" + resultadoStr).forward(req, resp);
+		     req.getRequestDispatcher("calculadoraServlet.jsp").forward(req, resp);
+
 			
 //			resp.sendRedirect("prueba.jsp?repeticiones=" + number1);
 			

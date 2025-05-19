@@ -21,18 +21,12 @@
     </form>
     
     <%
-        String resultadoStr = request.getParameter("resultado");
+        String resultadoStr = request.getParameter("resultadoStr");
         if (resultadoStr != null) {
-            try {
-                int resultado = Integer.parseInt(resultadoStr);
+            int resultado = Integer.parseInt(resultadoStr);
     %>
-                <p>Resultado: <%= resultado %></p>
+            <p>Resultado: <%= resultado %></p>
     <%
-            } catch (NumberFormatException e) {
-    %>
-                <p style="color:red;">Resultado no válido</p>
-    <%
-            }
         }
     %>
 

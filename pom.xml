@@ -6,11 +6,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>es.cursojava.web</groupId>
-	<artifactId>ProyectoWebProfe</artifactId>
+	<artifactId>ProyectoWebVik</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>ProyectoWebProfe Maven Webapp</name>
+	<name>ProyectoWebVik Maven Webapp</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 
