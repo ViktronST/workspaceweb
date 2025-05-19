@@ -21,14 +21,15 @@
     </form>
     
     <%
-        String resultadoStr = request.getParameter("resultadoStr");
-        if (resultadoStr != null) {
+        String resultadoStr = (String) request.getAttribute("resultadoStr");
+        if (resultadoStr != null) { 
             int resultado = Integer.parseInt(resultadoStr);
     %>
             <p>Resultado: <%= resultado %></p>
     <%
         }
     %>
+
 
 <%--   <%
         String num1Str = request.getParameter("num1");
